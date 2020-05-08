@@ -355,7 +355,7 @@ namespace LinqConsoleApp
         /// </summary>
         public void Przyklad8()
         {
-            var p8 = Emps.Any(x => x.Job == "Backend programmer");
+            var p8 = Emps.Any(x => x.Job.Equals("Backend programmer"));
             
                 Console.WriteLine("\n"+ p8);
 
@@ -368,7 +368,7 @@ namespace LinqConsoleApp
         public void Przyklad9()
         {
 
-            var p9 = Emps.Where(x => x.Job == "Frontend programmer" ).OrderBy(x => x.HireDate).Select(x => new
+            var p9 = Emps.Where(x => x.Job.Equals("Backend programmer")).OrderBy(x => x.HireDate).Select(x => new
             {
                 Nazwisko = x.Ename,
                 Zawod = x.Job
